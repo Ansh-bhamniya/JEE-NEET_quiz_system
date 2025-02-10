@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1>All Quizzes</h1>
+
+        <!-- Category Filters -->
+        <div class="container">
+            <!-- 'All Quiz' Button -->
+            <a href="{% url 'all_quiz' %}">
+                <button class="category active">All Quiz</button>
+            </a>
+        
+            <!-- Dynamic Category Buttons -->
+            {% for category in categories %}
+            <button class="category" onclick="filterQuiz('{{ category.name }}')">{{ category.name }}</button>
+            {% endfor %}
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search Quiz..." onkeyup="searchQuiz()">
+            <button class="search-btn">Search</button>
+        </div>
+
+        <!-- Quiz Cards Container (Grid Layout) -->
+        <div class="quiz-container" id="quizContainer">
+            
+            {% for quiz in quizzes %}
+            <div class="quiz-card" data-category="{{ quiz.category }}">
+                <h2>{{ quiz.title }}</h2>
+                <p class="card-text">Total Questions - 10</p>
+                <p>{{ quiz.description }}</p>
+                <a class="start-quiz" href="{% url 'quiz_view' quiz_id=quiz.id %}">Start Quiz</a>
+                <span class="date">{{ quiz.created_at|timesince }} ago </span>
+            </div>
+            {% empty %}
+            <p>No quizzes available.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

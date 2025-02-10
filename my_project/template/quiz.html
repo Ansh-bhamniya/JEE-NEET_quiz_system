@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block title %}Newton's Laws Quiz - BrainBunny{% endblock %}
+
+{% block content %}
+
+<h1 class="display-4 text-center my-5">{{ quiz.title }} - (10)</h1>
+<p class="fs-4 text-center container">{{ quiz.description }}</p>
+
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <span class="fs-5">{{ quiz.created_at }}</span>
+        <span class="fs-5">10:00</span>
+    </div>
+
+    <form method="POST" action="{% url 'quiz:submit' quiz.id %}">
+        {% csrf_token %}
+        <div class="questions my-4">
+            {% for question in quiz.question_set.all %}
+                <div class="card mb-2">
+                    <div class="card-header fw-bold">
+                        Question {{ forloop.counter }}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ question.text }}</p>
+                        {% for option in question.choice_set.all %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q{{ question.id }}" id="option{{ option.id }}" value="{{ option.id }}">
+                                <label class="form-check-label" for="option{{ option.id }}">
+                                    {{ option.text }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Quiz</button>
+    </form>
+</div>
+
+{% endblock %}

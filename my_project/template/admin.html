@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="target" value="add_question" >
+
+        <input type="text" name="question" placeholder="Enter Question" required>
+        <input type="text" name="op1" placeholder="Option 1" required>
+        <input type="text" name="op2" placeholder="Option 2" required>
+        <input type="text" name="op3" placeholder="Option 3" required>
+        <input type="text" name="answer" placeholder="Answer" required>
+        
+        <input type="submit" value="Add Question">
+    </form>
+
+</body>
+</html> 

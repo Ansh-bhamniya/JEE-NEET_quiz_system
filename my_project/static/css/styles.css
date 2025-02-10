@@ -1,0 +1,423 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #343a40;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for Navbar */
+.navbar-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-links li:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide menu on smaller screens */
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+    }
+}
+
+.quiz-btn, .signup-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.quiz-btn:hover, .signup-btn:hover {
+    background-color: #0056b3;
+}
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+    margin-top: 100px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+h5 {
+    color: red;
+}
+
+form {
+    background: white;
+    padding: 40px;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.nav-links li a {
+    color: white !important;  /* Force white text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Ensure "Home" stays white even after clicking */
+.nav-links li a:visited {
+    color: white !important;
+}
+
+.nav-links li a:hover {
+    color: lightgray;  /* Optional: Slight hover effect */
+}
+
+.nav-links li a:active {
+    color: #ddd; /* Light gray for click effect */
+}
+
+input:focus {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.date {
+    font-size: 12px;
+    color: gray;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Start Quiz Button */
+.start-quiz {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.quiz-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 20px; /* Space between cards */
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Prevents cards from stretching too much */
+    margin: 0 auto; /* Centers the grid */
+}
+
+.quiz-card {
+    border: 2px solid #ccc; /* Creates the border around the card */
+    border-radius: 8px; /* Optional: for rounded corners */
+    padding: 20px; /* Adds space inside the card */
+    margin: 15px; /* Adds space between the cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for 3D effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.quiz-card:hover {
+    transform: scale(1.05); /* Enlarges the card slightly on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increases the shadow on hover */
+}
+
+.quiz-card h2 {
+    font-size: 24px; /* Increase the font size */
+    font-weight: bold; /* Optional: Make the title bold */
+    margin-bottom: 10px; /* Optional: Add space below the title */
+}
+
+.quiz-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.category.active {
+    background: #198754;
+    color: white;
+}
+
+
+.category {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.categories {
+    margin: 20px 0;
+}
+
+.category:hover, .category.active {
+    background-color: #0056b3;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Quiz Page Specific Styles */
+h1.display-4 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.fs-4 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Title and Description Styles */
+.text-center {
+    text-align: center;
+}
+
+.my-5 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Card Styling for Questions */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1.25rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Radio Button Styling */
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .card-header {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .form-check-label {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}

@@ -1,0 +1,75 @@
+    <!-- Button for Login -->
+    <!-- <a href="{% url 'login' %}">
+        <button type="button">Login</button>
+    </a> -->
+    
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WelQuiz for JEE/NEET </title>
+</head>
+<body>
+    <h2>Welcome to Our Website</h2>
+    
+    <!-- <p>Please choose an option:</p> -->
+    
+
+    <!-- Button for Signup -->
+    <a href="{% url 'register' %}">Sign Up</a>
+    <!-- <a href="{% url 'login_view' %}">Login</a> -->
+</body>
+</html>
+
+
+
+    
+    <!-- Sign-up Button -->
+    <a href="{% url 'register' %}">Sign Up</a>
+    <a href="{% url 'login' %}">Login</a>
+{% endblock %}
+
+
+
+// monday 11:39
+navbar change 
+{% load static %}  <!-- Load the static files tag library -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Correct path to CSS -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">JEE/NEET QUIZ</div>
+            <ul class="nav-links">
+                <li><a href="{% url 'welcome' %}">Home</a></li>  <!-- Link to Welcome Page -->
+                <li><a href="{% url 'all_quiz' %}"></a>Quizzes</li>
+                <li>Leaderboard</li>
+            </ul>
+            {% if request.resolver_match.url_name == 'profile' and user.is_authenticated %}
+                <button class="logout-btn" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+            {% else %}
+                <button class="login-btn" onclick="window.location.href='{% url 'login' %}'">Login</button>
+            {% endif %}
+        </div>
+    </nav>
+</body>
+</html>
+
+
+
+video 6 
+46:48 time 
+uncompleted search bar 
+
+
+

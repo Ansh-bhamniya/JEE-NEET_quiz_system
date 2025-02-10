@@ -1,0 +1,37 @@
+{% load static %}  <!-- Load the static files tag library -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Correct path to CSS -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">JEE/NEET QUIZ</div>
+            <ul class="nav-links">
+                {% if user.is_authenticated %}
+                    <!-- If the user is authenticated, link Home to their profile page -->
+                    <li><a href="{% url 'profile' username=user.username %}">Home</a></li>
+                {% else %}
+                    <!-- If not authenticated, link Home to welcome page -->
+                    <li><a href="{% url 'welcome' %}">Home</a></li>
+                {% endif %}
+                <li><a href="{% url 'all_quiz' %}">Quizzes</a></li> <!-- Link to Quizzes Page -->
+                <li>Leaderboard</li>
+            </ul>
+
+            {% if user.is_authenticated %}
+                <!-- Show Logout button if user is authenticated -->
+                <button class="logout-btn" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+            {% else %}
+                <!-- Show Login button if user is not authenticated -->
+                <button class="login-btn" onclick="window.location.href='{% url 'login' %}'">Login</button>
+            {% endif %}
+        </div>
+    </nav>
+</body>
+</html>

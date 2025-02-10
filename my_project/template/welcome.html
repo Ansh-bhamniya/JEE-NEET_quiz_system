@@ -1,0 +1,30 @@
+{% load static %}  <!-- Load static files -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - JEE/NEET Quiz</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- Link to CSS -->
+</head>
+<body>
+
+    <!-- Import Navbar -->
+    {% include 'navbar.html' %}
+
+    <!-- Welcome Section -->
+    <div class="welcome-section" style="text-align: center; padding: 50px;">
+        <h1>Welcome to JEE/NEET QUIZ</h1>
+
+        
+
+        <div class="buttons" style="margin-top: 20px;">
+            <button class="quiz-btn" >Take a Quiz</button>
+            <button class="quiz-btn" onclick="window.location.href='{% url 'register' %}'" >Sign Up</button>
+
+        </div>
+    </div>
+
+</body>
+</html>

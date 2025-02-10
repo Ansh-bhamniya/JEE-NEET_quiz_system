@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>  
+    {% include 'navbar.html' %}
+    <h1>Quiz1.</h1>
+    <h2>{{ question }}</h2>
+    <h2>Score: {{ score }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="target" value="optionclick">
+        
+        <label>
+            <input type="radio" name="answervalue" value="{{ op1 }}"> {{ op1 }}
+        </label><br>
+
+        <label>
+            <input type="radio" name="answervalue" value="{{ op2 }}"> {{ op2 }}
+        </label><br>
+
+        <label>
+            <input type="radio" name="answervalue" value="{{ op3 }}"> {{ op3 }}
+        </label><br>
+
+        <label>
+            <input type="radio" name="answervalue" value="{{ op4 }}"> {{ op4 }}
+        </label><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body> 
+</html>
